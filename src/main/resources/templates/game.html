@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>国旗当てゲーム</title>
+</head>
+<body>
+	<h1>★・・国旗当てゲーム・・★</h1>
+	<form action="/answer" method="post" th:object="m:${mondai}">
+		<img src="${m.img}">
+		
+		<p>
+			<type="radio" name="answer" th:field="${choice1}"><span th:text="${m.choice1}"></span>
+		</p>
+		<p>
+			<type="radio" name="answer" th:field="${choice2}"><span th:text="${m.choice2}"></span>		
+		</p>
+		<p>
+			<type="radio" name="answer" th:field="${choice3}"><span th:text="${m.choice3}"></span>				
+		</p>
+		<p>
+			<type="radio" name="answer" th:field="${choice4}"><span th:text="${m.choice4}"></span>
+		</p>
+		
+	</form>
+	<hr>
+	
+	<p>
+		<h2 th:text="comment"></h2>
+		<h2><span th:text="${comment}"></span></h2>
+	</p>
+	
+	<p>
+		<a href="/game">☆・・次の問題・・☆</a>
+	</p>
+
+</body>
+</html>
